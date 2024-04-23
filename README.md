@@ -1,4 +1,4 @@
-# AWS -> Pex billing automatino
+# AWS -> Pex billing automation
 
 This repo automates uploading AWS invoices to [Pex](https://www.pexcard.com/).
 
