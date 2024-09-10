@@ -1,0 +1,10 @@
+#!/bin/sh
+
+export IMAP_HOST=mail.example.org
+export IMAP_USERNAME='jane@example.org'
+export IMAP_PASSWORD='foobar'
+# Copy this from the Authorization header in devtools.
+# If you get latin-1 decode errors, check for Unicode ... in this string
+export PEX_BEARER_TOKEN='...'
+
+python3 ./process.py
