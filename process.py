@@ -24,7 +24,7 @@ with IMAP4_SSL(host) as C:
     print("Logged in successfully.")
 
     C.select("INBOX")
-    _, res = C.search(None, "CC aws-billing@seagl.org UNSEEN")
+    _, res = C.search(None, 'CC aws-billing@seagl.org UNSEEN HEADER Subject "Amazon Web Services Invoice Available"')
     print(f"Executed search; got IDs {res}.")
     msg_ids = res[0].split()
     for i in msg_ids:
