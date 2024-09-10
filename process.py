@@ -60,8 +60,10 @@ with IMAP4_SSL(host) as C:
             "https://coreapi.pexcard.com/internal/v4/TransactionMetadata/User/Attachments/Unmatched"
         )
         id_r.raise_for_status()
-        pex_id = id_r.json()[0]["transactionRelationId"]
-        assert id_r.json()[0]["suggested"]["suggestedStatus"] == "Processing"
+        pex_id_json = id_r.json()[0]
+        pex_id = pex_id_json["transactionRelationId"]
+        if pex_id_json["suggested"]:
+            assert pex_id_json["suggested"]["suggestedStatus"] == "Processing"
 
         print("Retrieved Pex relation ID.")
 
