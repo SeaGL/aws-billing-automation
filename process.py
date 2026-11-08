@@ -88,6 +88,10 @@ with IMAP4_SSL(host) as C:
                 print("Pex reports relation still processing...")
                 time.sleep(10)
                 tries += 1
+            elif status == "Retrying":
+                print("Pex reports relation as 'retrying'...")
+                time.sleep(10)
+                tries += 1
             elif status == "Success":
                 print("Pex successfully processed transaction relation.")
                 success = True
